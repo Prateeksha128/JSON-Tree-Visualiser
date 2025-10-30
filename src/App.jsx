@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import { sampleJson } from "./constant";
-import TreeVisualizer from "./components/TreeVisualizer";
-import SearchBar from "./components/SearchBar";
-import JsonInput from "./components/JsonInput";
+import FlowTreeView from "./components/FlowTreeView";
+import QuerySearchBar from "./components/QuerySearchBar";
+import JsonDataInput from "./components/JsonDataInput";
 
 export default function App() {
   const [jsonData, setJsonData] = useState(() => {
@@ -37,9 +37,9 @@ export default function App() {
         </header>
 
         <div className="workspace">
-          <JsonInput setJsonData={setJsonData} defaultValue={sampleJson} />
+          <JsonDataInput setJsonData={setJsonData} defaultValue={sampleJson} />
           <div className="visualizer-column">
-            <SearchBar
+            <QuerySearchBar
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
             />
@@ -55,7 +55,7 @@ export default function App() {
                 {matchStatus}
               </div>
             )}
-            <TreeVisualizer
+            <FlowTreeView
               jsonData={jsonData}
               searchQuery={searchQuery}
               setMatchStatus={setMatchStatus}

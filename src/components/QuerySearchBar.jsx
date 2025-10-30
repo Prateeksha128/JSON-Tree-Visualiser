@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/searchBar.css";
 
-export default function SearchBar({ searchQuery, setSearchQuery }) {
+export default function QuerySearchBar({ searchQuery, setSearchQuery }) {
   const handleSubmit = (event) => {
     event.preventDefault();
   };

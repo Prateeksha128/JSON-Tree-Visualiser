@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { sampleJson } from "../constant";
 
 
-function JsonInput({ setJsonData, defaultValue = sampleJson }) {
+function JsonDataInput({ setJsonData, defaultValue = sampleJson }) {
     const [input, setInput] = useState(defaultValue);
     const [error, setError] = useState("");
 
@@ -46,4 +46,4 @@ function JsonInput({ setJsonData, defaultValue = sampleJson }) {
     );
 }
 
-export default JsonInput;
+export default JsonDataInput;

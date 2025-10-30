@@ -31,7 +31,7 @@ function TooltipNode({ data }) {
 
 const nodeTypes = { tooltipNode: TooltipNode };
 
-function TreeVisualizer({ jsonData, searchQuery, setMatchStatus }) {
+function FlowTreeView({ jsonData, searchQuery, setMatchStatus }) {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
@@ -106,4 +106,4 @@ function TreeVisualizer({ jsonData, searchQuery, setMatchStatus }) {
   );
 }
 
-export default TreeVisualizer;
+export default FlowTreeView;
