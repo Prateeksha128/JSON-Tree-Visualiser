@@ -1,0 +1,266 @@
+#root{
+  width: 100%;
+}
+
+.app {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 48px 24px;
+  background: linear-gradient(130deg, #eef2ff 0%, #f8fafc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: background 0.4s ease;
+}
+
+.app.dark {
+  background: radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, #0f172a 60%, #020617 100%);
+  color: #f8fafc;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1180px;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 36px 80px -40px rgba(15, 23, 42, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app.dark .app-container {
+  background: rgba(15, 23, 42, 0.95);
+  color: #f9fafb;
+  box-shadow: 0 32px 70px -30px rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(12px);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+}
+
+.json-input,
+.visualizer-column {
+  background: #f8fafc;
+  border-radius: 22px;
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.app.dark .json-input,
+.app.dark .visualizer-column {
+  background: rgba(15, 23, 42, 0.55);
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.json-input {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.json-input__label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.json-input__textarea {
+  min-height: 340px;
+  border-radius: 16px;
+  border: 1px solid #d4d4d8;
+  padding: 16px 18px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  background: #ffffff;
+  color: #0f172a;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.json-input__textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.app.dark .json-input__textarea {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(148, 163, 184, 0.35);
+  color: #f8fafc;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  border: none;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 22px 40px -24px rgba(79, 70, 229, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 28px 50px -24px rgba(79, 70, 229, 0.9);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+.json-input__error {
+  margin: 0;
+  font-size: 13px;
+  color: #dc2626;
+}
+
+.visualizer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tree-visualizer {
+  flex: 1;
+  height: 470px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.app.dark .tree-visualizer {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.tree-visualizer.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.app.dark .tree-visualizer.empty-state {
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.react-flow__pane {
+  cursor: grab;
+}
+
+.react-flow__controls {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.app.dark .react-flow__controls {
+  background: rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.1);
+}
+
+input:checked + .slider {
+  background: linear-gradient(135deg, #4338ca 0%, #312e81 100%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .tree-visualizer {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 32px 16px;
+  }
+
+  .app-container {
+    padding: 28px 24px;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
+}
+
