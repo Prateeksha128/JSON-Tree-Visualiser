@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import JsonInput from "./components/JsonInput";
-import TreeVisualizer from "./components/TreeVisualizer";
-import SearchBar from "./components/SearchBar";
 import "./App.css";
 import { sampleJson } from "./constant";
+import TreeVisualizer from "./components/TreeVisualizer";
+import SearchBar from "./components/SearchBar";
+import JsonInput from "./components/JsonInput";
 
 export default function App() {
   const [jsonData, setJsonData] = useState(() => {
