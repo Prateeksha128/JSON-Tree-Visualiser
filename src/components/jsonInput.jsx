@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { sampleJson } from "../constant";
 
-export const sampleJson = `{
-  "user": {
-    "id": 1,
-    "name": "John Doe",
-    "address": {
-      "city": "New York",
-      "country": "USA"
-    },
-    "items": [
-      { "name": "item1" },
-      { "name": "item2" }
-    ]
-  }
-}`;
 
 function JsonInput({ setJsonData, defaultValue = sampleJson }) {
     const [input, setInput] = useState(defaultValue);

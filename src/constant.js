@@ -1,0 +1,15 @@
+export const sampleJson = `{
+    "user": {
+      "id": 1,
+      "name": "John Doe",
+      "address": {
+        "city": "New York",
+        "country": "USA"
+      },
+      "items": [
+        { "name": "item1" },
+        { "name": "item2" }
+      ]
+    }
+  }`;
+  

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import JsonInput, { sampleJson } from "./components/JsonInput";
+import JsonInput from "./components/JsonInput";
 import TreeVisualizer from "./components/treeVisualizer";
 import SearchBar from "./components/SearchBar";
 import "./App.css";
+import { sampleJson } from "./constant";
 
 export default function App() {
   const [jsonData, setJsonData] = useState(() => {
@@ -43,7 +44,14 @@ export default function App() {
               setSearchQuery={setSearchQuery}
             />
             {searchQuery && (
-              <div style={{ minHeight: 24, fontWeight: 500, fontSize: 15, margin: '4px 0 4px 0' }}>
+              <div
+                style={{
+                  minHeight: 24,
+                  fontWeight: 500,
+                  fontSize: 15,
+                  margin: "4px 0 4px 0",
+                }}
+              >
                 {matchStatus}
               </div>
             )}
