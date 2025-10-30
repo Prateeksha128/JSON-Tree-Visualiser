@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import JsonInput from "./components/JsonInput";
-import TreeVisualizer from "./components/treeVisualizer";
+import TreeVisualizer from "./components/TreeVisualizer";
 import SearchBar from "./components/SearchBar";
 import "./App.css";
 import { sampleJson } from "./constant";
